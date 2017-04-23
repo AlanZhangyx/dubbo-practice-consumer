@@ -11,7 +11,8 @@ public class Main {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-dubbo.xml");
 		context.start();
-		
+
+		System.out.println("开始调用");
 		PersonService personservice = (PersonService)context.getBean("personService");
 		PersonDescriptionDTO dtoReq = new PersonDescriptionDTO();
 		PersonDTO dtoResp = personservice.queryPerson(dtoReq);
